@@ -17,8 +17,9 @@ export class ArtistImageResolver {
   async createArtistImage(
     // @Args('userId') userId: string, //
     @Args({ name: 'url', type: () => String }) url: string,
+    @Args({ name: 'artistId', type: () => String }) artistId: string,
   ) {
-    return await this.artistImageService.create({ url });
+    return await this.artistImageService.create({ url, artistId });
   }
 
   // Update Artist Image API
